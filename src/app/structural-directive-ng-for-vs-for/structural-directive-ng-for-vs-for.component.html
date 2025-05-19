@@ -47,9 +47,21 @@
   </div>
   <div class="col-2">
     <ol>
-      <li *ngFor="let company of companyList">
+      <!-- <li *ngFor="let company of companyList">
+        {{ company }}
+      </li> -->
+      @for(company of companyList; track company; let f=$first, l=$last, e=
+      $even, o= $odd, c=$count, i=$index){ @if(f == true){
+      <li style="color: green">
         {{ company }}
       </li>
+      }@else{
+      <li>
+        {{ company }}
+      </li>
+      } }@empty {
+      <p>Lista vazia</p>
+      }
     </ol>
   </div>
 </div>
