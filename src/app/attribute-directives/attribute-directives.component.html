@@ -1,0 +1,82 @@
+<div class="row text-center">
+  <div class="col-12 m-3">
+    <b>Example of Attribute Directive - ngClass</b>
+  </div>
+</div>
+
+<div class="row text-center">
+  <div class="col-4">
+    <h3 [ngClass]="textColor">This is the first example of ngClass</h3>
+    <br />
+    <button class="btn btn-success m-2" (click)="changeColor('text-success')">
+      Change to green
+    </button>
+
+    <button class="btn btn-danger m-2" (click)="changeColor('text-danger')">
+      Change to red
+    </button>
+
+    <button class="btn btn-warning m-2" (click)="changeColor('text-warning')">
+      Change to yellow
+    </button>
+  </div>
+  <!--  -->
+  <div class="col 4">
+    <h3 [ngClass]="isTextGreen ? 'text-success' : 'text-danger'">
+      This is the second example of ngClass
+    </h3>
+    <br />
+    <!-- {{ isTextGreen }} -->
+    <input type="checkbox" [(ngModel)]="isTextGreen" name="" id="checkbox" />
+    <label for="checkbox">Change Color</label>
+  </div>
+  <!--  -->
+  <div class="col-4">
+    <h3 [ngClass]="userClass">This is the third example of ngClass</h3>
+    <br />
+    <input
+      type="text"
+      [(ngModel)]="userClass"
+      name=""
+      id=""
+      placeholder="text-success"
+    />
+  </div>
+  <div class="col-12 m-3">
+    <b>Example of Attribute Directive - ngStyle</b>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-4">
+      <h3 [ngStyle]="{ color: styleColor, 'font-weight': 'lighter' }">
+        This is the first example of ngStyle
+      </h3>
+      <br />
+      <button class="btn btn-warning m-2" (click)="updateColor('orange')">
+        Change to Orange
+      </button>
+
+      <button class="btn btn-primary m-2" (click)="updateColor('blue')">
+        Change to Blue
+      </button>
+    </div>
+
+    <div class="col 4">
+      <h3 [ngStyle]="{ color: isTextOrange ? 'orange' : 'blue' }">
+        This is the second example of ngStyle
+      </h3>
+      <br />
+      <input
+        type="checkbox"
+        [(ngModel)]="isTextOrange"
+        name=""
+        id="checkbox2"
+      />
+      <label for="checkbox2">Change Color</label>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <h3 [ngStyle]="customClass">This is the third example of ngStyle</h3>
+  </div>
+</div>
